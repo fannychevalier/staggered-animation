@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Experiment 1 Replication Material" />
+
+
+<title>The Not-So-Staggering Effect of   Staggered Animation</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="http://www.cs.toronto.edu/~fchevali/fannydotnet//resources_pub/pdf/notsostaggering-infovis14.pdf">Article</a>
+</li>
+<li>
+  <a href="experiment1.html">Experiment 1</a>
+</li>
+<li>
+  <a href="experiment2.html">Experiment 2</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">The Not-So-Staggering Effect of <br /> Staggered Animation</h1>
+<h4 class="author"><em>Experiment 1 Replication Material</em></h4>
+
+</div>
+
+
+<style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+ 
+</style>
+<p> </p>
+<p>This page contains additional material to facilitate analysis and replication of our study of staggered animation including participant logs, R scripts for analysis, as well as the java application used for the experiement and instructions for participants of the study.</p>
+<p> </p>
+<p><a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> All material on this page is CC-BY-SA. If you reuse or adapt it please reference our article and/or link to this page.</p>
+<p> </p>
+<div id="goal-of-the-experiment" class="section level3">
+<h3>Goal of the experiment</h3>
+<p>The goal of this first experiment was to validate the task complexity metrics as we define them in the paper. Note that this experiment does not involve staggering.</p>
+<p> </p>
+</div>
+<div id="video-instructions" class="section level3">
+<h3>Video instructions</h3>
+<iframe width="600" height="490" src="https://www.youtube.com/embed/HOuQuE4oCUM" frameborder="0" allowfullscreen>
+</iframe>
+<p> </p>
+<p> </p>
+</div>
+<div id="experimental-program-zip-archive" class="section level3">
+<h3>Experimental Program (zip archive)</h3>
+<p>To run the experiment, unzip the <a href="https://github.com/fannychevalier/staggered-animation/blob/master/The%20Not%20So%20Staggering%20Effect%20of%20Staggered%20Animations%20-%20Experiment%201.zip">archive</a> and run the Java executable <code>Experiment1.jar</code>.</p>
+<p>You need to have <a href="https://www.java.com/en/download/">Java</a> installed on your computer.</p>
+<p> </p>
+<p><a href="https://github.com/fannychevalier/staggered-animation/blob/master/The%20Not%20So%20Staggering%20Effect%20of%20Staggered%20Animations%20-%20Experiment%201.zip"><img src="images/stagger-java.png" /></a></p>
+<p> </p>
+<p> </p>
+</div>
+<div id="analysis-and-replication-materials" class="section level3">
+<h3>Analysis and replication materials</h3>
+<ul>
+<li>Download the <a href="https://github.com/fannychevalier/staggered-animation/blob/master/staggeredAnimation-xp1-logs.csv">experimental data (csv file)</a></li>
+<li>Downlaod the <a href="">R script</a> below</li>
+</ul>
+<p> </p>
+<pre class="r"><code>#------------------ LIBRARIES --------------------------#
+install.packages(&quot;ggplot2&quot;, repos=&quot;http://cran.utstat.utoronto.ca/&quot;)</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/9s/1kyml98x6f7854mqs56lxrb00000gq/T//Rtmp1U9zxU/downloaded_packages</code></pre>
+<pre class="r"><code>library(ggplot2)
+
+install.packages(&quot;boot&quot;, repos=&quot;http://cran.utstat.utoronto.ca/&quot;)</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/9s/1kyml98x6f7854mqs56lxrb00000gq/T//Rtmp1U9zxU/downloaded_packages</code></pre>
+<pre class="r"><code>library(boot)
+
+install.packages(&quot;gridExtra&quot;, repos=&quot;http://cran.utstat.utoronto.ca/&quot;)</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/9s/1kyml98x6f7854mqs56lxrb00000gq/T//Rtmp1U9zxU/downloaded_packages</code></pre>
+<pre class="r"><code>library(gridExtra)
+#-------------------------------------------------------#
+
+
+
+
+
+#------------------ NAMES AND LABELS -------------------#
+  ### short names for columns
+crowd &lt;- &#39;complexity_crowding&#39;
+innercrowd &lt;- &#39;complexity_innercrowding&#39;
+deform &lt;- &#39;complexity_deformation&#39;
+norm_error &lt;- &#39;normalized_error&#39;
+accuracy &lt;- &#39;ID_accuracy&#39;
+accuracy_irrespectiveofID &lt;- &#39;noID_accuracy&#39;
+
+
+  ### text labels for charts
+lDeform &lt;- &#39;Deformation&#39;
+lincrowd &lt;- &#39;Inner crowding&#39;
+lCrowd &lt;- &#39;Crowding&#39;
+taskA_label &lt;- &#39;noID&#39;
+taskB_label &lt;- &#39;ID&#39;
+#-------------------------------------------------------#
+
+
+
+
+
+#------------ LOAD AND CHECK DATA ----------------------#
+logs &lt;- &quot;experimental-materials/staggeredAnimation-xp1-logs.csv&quot;
+NB_PARTICIPANTS = 20   ## Our experimental setup
+NB_REPS = 8
+NB_CONDITIONS = 8
+
+data = read.csv(logs, sep=&quot;\t&quot;, head=TRUE)
+data &lt;- data[data$is_practice != &#39;true&#39;,]   ## Filter out practice trials
+
+
+#### filter by idTrack
+taskA &lt;- data[data$is_idTrack == &#39;false&#39;,]
+taskB &lt;- data[data$is_idTrack == &#39;true&#39;,]
+
+
+### SANITY CHECK ###
+if (length(taskA[,1]) != NB_PARTICIPANTS*NB_REPS*NB_CONDITIONS)  
+    cat(&quot;Warning: wrong number of trials for Condition A&quot;)
+if (length(taskB[,1]) != NB_PARTICIPANTS*NB_REPS*NB_CONDITIONS)  
+    cat(&quot;Warning: wrong number of trials for Condition B&quot;)
+#-------------------------------------------------------#
+
+
+
+
+
+
+#--------------- USEFUL FUNCTIONS ----------------------#
+
+##### get subset corresponding to a complexity level &#39;level&#39; of a measure &#39;measure&#39;
+getSubsetByComplexity &lt;- function(x, measure, level)  {
+    result &lt;- x[x[,measure]==level,]
+    
+    if (length(result[,1]) != NB_PARTICIPANTS*NB_REPS*NB_CONDITIONS/2)    ### sanity check
+            cat(&quot;Warning: wrong number of trials in getSubsetByComplexity&quot;)
+    
+    return (result)
+}       
+                    ## Exemple: call getSubsetByComplexity(condA, innercrowd, &#39;E&#39;)
+
+
+
+aggregateParticipant &lt;- function(x,measure,f) {
+    if (f==&quot;mean&quot;)
+        return (aggregateMean(x,measure))
+    else
+        return (aggregateMedian(x,measure))
+}
+
+###### get mean per participant
+aggregateMean &lt;- function(x, measure) {
+    aggdata &lt;- aggregate(x[,measure] ~ participant, data = x, mean)
+    return (aggdata)
+}
+
+
+###### get median per participant
+aggregateMedian &lt;- function(x, measure) {
+    aggdata &lt;- aggregate(x[,measure] ~ participant, data = x, median)
+    return (aggdata)
+}
+
+
+##### get global percent of success
+getPercent &lt;- function(x, measure) {
+    aggdata &lt;- aggregate(x[,measure] ~ participant, data = x, sum)
+    aggdata[,2] &lt;- aggdata[,2]/48
+    return (aggdata)    
+}
+
+
+### get mean of a vector by Measure
+getMean &lt;- function(x,measure) {
+    mean(x[,measure])
+}
+
+### get median of a vector by Measure
+getMedian &lt;- function(x,measure) {
+    return(median(x[,measure]))
+}
+
+
+### get confidence interval
+getCI &lt;- function(x,f) {
+    if (f == &quot;mean&quot;)
+        return(getCIMean(x))
+    else    # median
+        return(getCIMedian(x))
+}
+
+### get Confidence interval (mean)
+getCIMean &lt;- function(x) {
+    number.measures &lt;- length(x)
+    number.samples &lt;- 5000
+
+    sample.mean &lt;- function(x, index) {
+        return(mean(x[index]))
+    }
+    boot.object &lt;- boot(x, sample.mean, R = number.samples)
+    confidence.intervals &lt;- quantile(boot.object$t, c(0.025, 0.975))  #the samples are in boot.object$t
+    boot.object$t0  # the mean
+    return (confidence.intervals)
+}
+
+### get Confidence interval (median)
+getCIMedian &lt;- function(x) {
+    number.measures &lt;- length(x)
+    number.samples &lt;- 5000
+
+    sample.median &lt;- function(x, index) {
+        return(median(x[index]))
+    }
+    boot.object &lt;- boot(x, sample.median, R = number.samples)
+    confidence.intervals &lt;- quantile(boot.object$t, c(0.025, 0.975))  #the samples are in boot.object$t
+    boot.object$t0  # the median
+    return (confidence.intervals)
+}   
+
+## get Lower value of a CI, 
+# Param: column=&lt;normalized_error, accuracy&gt;, f=&lt;&quot;mean&quot;, &quot;median&quot;&gt;
+getLowerCI &lt;- function(x, f) {
+    ci &lt;- getCI(x,f)
+    ci &lt;- as.data.frame(ci)
+    return(ci[1,1])
+}
+
+getUpperCI &lt;- function(x, f) {
+    ci &lt;- getCI(x,f)
+    ci &lt;- as.data.frame(ci)
+    return(ci[2,1])
+}
+
+
+#-------------------------------------------------------#
+
+
+
+
+#--------------- FUNCTIONS FOR PLOTS ----------------------#
+
+ # This function displays the plots  
+ # Parameters :
+ #      task = &lt;taskA, taskB&gt;
+ #      f = &lt;median, mean&gt;
+ #      measure = &lt;norm_error, accuracy&gt;
+ #      measure_label = lable of the x axis 
+ #      colour_palette = colour palette for brewer (1:blue, 4:green, 7:orange)
+ #      title = title of the plot
+ #      xmin, xmax = xlimits of the plot
+    
+    
+    plotLowHigh &lt;- function(task, f, measure, measure_label, colour_palette, title, xmin, xmax) {   
+        crowd_L &lt;- aggregateParticipant(getSubsetByComplexity(task,crowd,&#39;L&#39;),measure,f)[,2]
+        crowd_H &lt;- aggregateParticipant(getSubsetByComplexity(task,crowd,&#39;H&#39;),measure,f)[,2]
+        incrowd_L &lt;- aggregateParticipant(getSubsetByComplexity(task,innercrowd,&#39;L&#39;),measure,f)[,2]
+        incrowd_H &lt;- aggregateParticipant(getSubsetByComplexity(task,innercrowd,&#39;H&#39;),measure,f)[,2]
+        deform_L &lt;- aggregateParticipant(getSubsetByComplexity(task,deform,&#39;L&#39;),measure,f)[,2]
+        deform_H &lt;- aggregateParticipant(getSubsetByComplexity(task,deform,&#39;H&#39;),measure,f)[,2]  
+     
+        L_points &lt;- c(mean(crowd_L), mean(incrowd_L), mean(deform_L))
+        if (f==&quot;median&quot;) L_points &lt;- c(median(crowd_L), median(incrowd_L), median(deform_L))
+        L_lower_CIs &lt;- c(getLowerCI(crowd_L,f), getLowerCI(incrowd_L,f), getLowerCI(deform_L, f))
+        L_upper_CIs &lt;- c(getUpperCI(crowd_L,f), getUpperCI(incrowd_L,f), getUpperCI(deform_L, f))
+
+
+        H_points &lt;- c(mean(crowd_H), mean(incrowd_H), mean(deform_H))
+        if (f==&quot;median&quot;) H_points &lt;- c(median(crowd_H), median(incrowd_H), median(deform_H))
+        H_lower_CIs &lt;- c(getLowerCI(crowd_H,f), getLowerCI(incrowd_H,f), getLowerCI(deform_H, f))
+        H_upper_CIs &lt;- c(getUpperCI(crowd_H,f), getUpperCI(incrowd_H,f), getUpperCI(deform_H, f))   
+        
+    
+        dfr &lt;- data.frame(                                           # data frame with f and CIs
+            x = c(L_points,H_points),
+            y = rep(c(&quot;Crowding&quot;,&quot;Inner crowding&quot;,&quot;Deformation&quot;), 2),
+            upper = c(L_upper_CIs, H_upper_CIs),
+            lower = c(L_lower_CIs, H_lower_CIs),
+            complexity = rep(c(&quot;Low&quot;,&quot;High&quot;), each = 3)
+        )
+
+        dfr$y_numeric &lt;- c(0.9,1.9,2.9,1.1,2.1,3.1)
+        
+        dfr
+    
+        p &lt;- ggplot(dfr, aes(x, y_numeric, colour = complexity)) +
+                geom_point(size = 6) +
+                geom_errorbarh(aes(xmin=lower, xmax=upper), height = .0, size = 1) +
+                scale_colour_brewer(palette=colour_palette) +
+                coord_cartesian(xlim = c(xmin, xmax), ylim = c(0.7,3.3)) +
+                scale_y_discrete(breaks=c(1,2,3), labels=c(&quot;Crowding&quot;,&quot;Inner crowding&quot;,&quot;Deformation&quot;)) +    
+                xlab(measure_label) +       
+                theme_bw() + 
+                theme(axis.title.y = element_blank(), axis.line.y = element_blank()) +
+                ggtitle(title)
+        return (p)
+    }
+
+
+    plotDifference &lt;- function(task, f, measure, measure_label, title, xmin, xmax) {    
+        crowd_L &lt;- aggregateParticipant(getSubsetByComplexity(task,crowd,&#39;L&#39;),measure,f)[,2]
+        crowd_H &lt;- aggregateParticipant(getSubsetByComplexity(task,crowd,&#39;H&#39;),measure,f)[,2]
+        incrowd_L &lt;- aggregateParticipant(getSubsetByComplexity(task,innercrowd,&#39;L&#39;),measure,f)[,2]
+        incrowd_H &lt;- aggregateParticipant(getSubsetByComplexity(task,innercrowd,&#39;H&#39;),measure,f)[,2]
+        deform_L &lt;- aggregateParticipant(getSubsetByComplexity(task,deform,&#39;L&#39;),measure,f)[,2]
+        deform_H &lt;- aggregateParticipant(getSubsetByComplexity(task,deform,&#39;H&#39;),measure,f)[,2]
+        if (measure == accuracy || measure == accuracy_irrespectiveofID) {
+            crowd_diff &lt;- crowd_L - crowd_H
+            incrowd_diff &lt;- incrowd_L - incrowd_H
+            deform_diff &lt;- deform_L - deform_H
+        }
+        else {
+            crowd_diff &lt;- crowd_H - crowd_L
+            incrowd_diff &lt;- incrowd_H - incrowd_L
+            deform_diff &lt;- deform_H - deform_L
+        } 
+        
+ 
+        points &lt;- c(mean(crowd_diff), mean(incrowd_diff), mean(deform_diff))
+        if (f==&quot;median&quot;) L_points &lt;- c(median(crowd_diff), median(incrowd_diff), median(deform_diff))
+        lower_CIs &lt;- c(getLowerCI(crowd_diff,f), getLowerCI(incrowd_diff,f), getLowerCI(deform_diff, f))
+        upper_CIs &lt;- c(getUpperCI(crowd_diff,f), getUpperCI(incrowd_diff,f), getUpperCI(deform_diff, f))
+
+
+        dfr &lt;- data.frame(                                           # data frame with differences and CIs
+            x = points,
+            y = c(&quot;Crowding&quot;,&quot;Inner crowding&quot;,&quot;Deformation&quot;),
+            upper = upper_CIs,
+            lower = lower_CIs
+        )
+
+        dfr$y_numeric &lt;- c(1,2,3)
+    
+        dfr
+    
+        p &lt;- ggplot(dfr, aes(x, y_numeric)) +
+                geom_point(size = 6) +
+                geom_errorbarh(aes(xmin=lower, xmax=upper), height = .0, size = 1) +
+                coord_cartesian(xlim = c(xmin, xmax), ylim = c(0.7,3.3)) +
+                scale_y_discrete(breaks=c(1,2,3), labels=c(&quot;Crowding&quot;,&quot;Inner crowding&quot;,&quot;Deformation&quot;)) +    
+                xlab(measure_label) +       
+                theme_bw() + 
+                theme(axis.title.y = element_blank(), axis.line.y = element_blank()) +
+                ggtitle(title)
+            
+                return (p)
+        }
+
+
+
+    #/------- PLOTS ---------/#
+    p1 &lt;- plotLowHigh(taskA, &quot;mean&quot;, norm_error, &quot;&quot;, 1, &quot;noID task - Mean error&quot;, 0, 0.4)
+    p2 &lt;- plotDifference(taskA, &quot;mean&quot;, norm_error, &quot;&quot;, &quot;noID task - Difference mean error&quot;, 0, 0.4)
+    p3 &lt;- plotLowHigh(taskB, &quot;mean&quot;, norm_error, &quot;&quot;, 7, &quot;ID task - Mean error&quot;, 0, 0.4)
+    p4 &lt;- plotDifference(taskB, &quot;mean&quot;, norm_error, &quot;&quot;, &quot;ID task - Difference mean error&quot;, 0, 0.4)
+        
+    
+    p11 &lt;- plotLowHigh(taskA, &quot;mean&quot;, accuracy, &quot;&quot;, 1, &quot;noID task - Mean accuracy&quot;, 0.5, 1)
+    p12 &lt;- plotDifference(taskA, &quot;mean&quot;, accuracy, &quot;&quot;, &quot;noID task - Difference mean accuracy&quot;, 0, 0.4)
+    p13 &lt;- plotLowHigh(taskB, &quot;mean&quot;, accuracy, &quot;&quot;, 7, &quot;ID task - Mean accuracy&quot;, 0.5, 1)
+    p14 &lt;- plotDifference(taskB, &quot;mean&quot;, accuracy, &quot;&quot;, &quot;ID task - Difference mean accuracy&quot;, 0, 0.4)
+    p15 &lt;- plotLowHigh(taskB, &quot;mean&quot;, accuracy_irrespectiveofID, &quot;&quot;, 4, &quot;ID task - Mean accuracy (irrespective of ID)&quot;, 0.5, 1)
+    p16 &lt;- plotDifference(taskB, &quot;mean&quot;, accuracy_irrespectiveofID, &quot;&quot;, &quot;D task - Difference mean accuracy (irrespective of ID)&quot;, 0, 0.4)
+    
+    
+    
+    
+    #/-------- PLOT RESULTS --------/#
+    grid.arrange(p1,p2,p3,p4, ncol=2)</code></pre>
+<p><img src="experiment1_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<pre class="r"><code>    grid.arrange(p11,p12,p15,p16,p13,p14, ncol=2)</code></pre>
+<p><img src="experiment1_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
