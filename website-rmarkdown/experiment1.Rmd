@@ -63,8 +63,8 @@ You need to have [Java](https://www.java.com/en/download/) installed on your com
 
 ### Analysis and replication materials
 
-* Download the [experimental data (csv file)](https://github.com/fannychevalier/staggered-animation/blob/master/staggeredAnimation-xp1-logs.csv)
-* Downlaod the [R script]() below
+* Download the [experimental data (csv file)](https://github.com/fannychevalier/staggered-animation/blob/master/experimental-materials/staggeredAnimation-xp1-logs.csv)
+* Downlaod the [R script](https://github.com/fannychevalier/staggered-animation/blob/master/experimental-materials/staggeredAnimation-xp1.R) below
 
 &nbsp;
 
