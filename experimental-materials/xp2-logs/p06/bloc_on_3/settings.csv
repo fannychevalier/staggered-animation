@@ -1,0 +1,8 @@
+settings	value
+distance	0.5
+cloudSize	30
+animationDwell	0.2
+animationDuration	1000
+targets	3
+identityTrack	true
+order	mincrowding

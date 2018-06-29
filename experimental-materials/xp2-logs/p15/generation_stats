@@ -1,0 +1,123 @@
+[Console output redirected to file:/Users/fanny/Documents/workspace/staggeredAnim-Pierre/data/generation_stat/rien.txt]
+=============================================
+/Users/fanny/Documents/workspace/staggeredAnim-Pierre/./data/xp2-main/p15
+
+=============================================
+Generating 5000 yorder 0.2
+   ...0 generated, 0 accepted / 0
+.........   ...1000 generated, 202 accepted / 1000
+.........   ...2000 generated, 382 accepted / 2000
+.........   ...3000 generated, 575 accepted / 3000
+.........   ...4000 generated, 744 accepted / 4000
+.........-----------------------
+Done with __ 898 improved + 4102 rejected
+best: T0: 0.13110081661767536
+best: T1: 0.11579252257853395
+best: T2: 0.10596133227320625
+best: T3: 0.09764287317083964
+best: T4: 0.09579018742188072
+
+=============================================
+Generating 5000 yorder 0.6
+   ...0 generated, 0 accepted / 0
+.........   ...1000 generated, 78 accepted / 1000
+.........   ...2000 generated, 166 accepted / 2000
+.........   ...3000 generated, 253 accepted / 3000
+.........   ...4000 generated, 338 accepted / 4000
+.........-----------------------
+Done with __ 414 improved + 4586 rejected
+best: T0: 0.19378577844675482
+best: T1: 0.18584587414026227
+best: T2: 0.185172826659118
+best: T3: 0.17373083102527143
+best: T4: 0.1581797413140364
+
+=============================================
+Generating 5000 smart 0.2
+   ...0 generated, 0 accepted / 0
+.........   ...1000 generated, 168 accepted / 1000
+.........   ...2000 generated, 339 accepted / 2000
+.........   ...3000 generated, 496 accepted / 3000
+.........   ...4000 generated, 680 accepted / 4000
+.........-----------------------
+Done with __ 829 improved + 4171 rejected
+best: T0: 0.19811481922490987
+best: T1: 0.1964135527503319
+best: T2: 0.19603436505894967
+best: T3: 0.19287440726919947
+best: T4: 0.18051699472894323
+
+=============================================
+Generating 5000 smart 0.6
+   ...0 generated, 0 accepted / 0
+.........   ...1000 generated, 99 accepted / 1000
+.........   ...2000 generated, 209 accepted / 2000
+.........   ...3000 generated, 296 accepted / 3000
+.........   ...4000 generated, 398 accepted / 4000
+.........-----------------------
+Done with __ 504 improved + 4496 rejected
+best: T0: 0.2579308553635751
+best: T1: 0.20658611121059756
+best: T2: 0.20546887037954886
+best: T3: 0.2009569280356056
+best: T4: 0.19974940109698813
+
+=============================================
+Generating 5000 yorder 0.2
+   ...0 generated, 0 accepted / 0
+.........   ...1000 generated, 179 accepted / 1000
+.........   ...2000 generated, 366 accepted / 2000
+.........   ...3000 generated, 536 accepted / 3000
+.........   ...4000 generated, 724 accepted / 4000
+.........-----------------------
+Done with __ 913 improved + 4087 rejected
+best: T0: 0.12596382340785822
+best: T1: 0.11917033526680798
+best: T2: 0.11236614395719041
+best: T3: 0.10408067109399155
+best: T4: 0.09884881676333246
+
+=============================================
+Generating 5000 yorder 0.6
+   ...0 generated, 0 accepted / 0
+.........   ...1000 generated, 72 accepted / 1000
+.........   ...2000 generated, 170 accepted / 2000
+.........   ...3000 generated, 246 accepted / 3000
+.........   ...4000 generated, 351 accepted / 4000
+.........-----------------------
+Done with __ 432 improved + 4568 rejected
+best: T0: 0.19655842549458769
+best: T1: 0.17869988559909145
+best: T2: 0.17408897625783737
+best: T3: 0.1603428719063742
+best: T4: 0.15137676215797258
+
+=============================================
+Generating 5000 smart 0.2
+   ...0 generated, 0 accepted / 0
+.........   ...1000 generated, 166 accepted / 1000
+.........   ...2000 generated, 342 accepted / 2000
+.........   ...3000 generated, 507 accepted / 3000
+.........   ...4000 generated, 686 accepted / 4000
+.........-----------------------
+Done with __ 852 improved + 4148 rejected
+best: T0: 0.18069361156152108
+best: T1: 0.1667999957637002
+best: T2: 0.1659947836081193
+best: T3: 0.16558042833239556
+best: T4: 0.1614436230070283
+
+=============================================
+Generating 5000 smart 0.6
+   ...0 generated, 0 accepted / 0
+.........   ...1000 generated, 112 accepted / 1000
+.........   ...2000 generated, 218 accepted / 2000
+.........   ...3000 generated, 319 accepted / 3000
+.........   ...4000 generated, 420 accepted / 4000
+.........-----------------------
+Done with __ 529 improved + 4471 rejected
+best: T0: 0.24565693342238554
+best: T1: 0.22361068748095947
+best: T2: 0.21651726405348665
+best: T3: 0.21451408871421584
+best: T4: 0.2012222681654749
