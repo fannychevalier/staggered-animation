@@ -36,7 +36,7 @@ taskB_label <- 'ID'
 
 
 #------------ LOAD AND CHECK DATA ----------------------#
-logs <- "/Users/fanny/Desktop/fannyMation-Exp1/logs.csv"
+logs <- "staggeredAnimation-xp1-logs.csv"
 NB_PARTICIPANTS = 20   ## For sanity check
 NB_REPS = 8
 NB_CONDITIONS = 8
@@ -283,7 +283,7 @@ getUpperCI <- function(x, f) {
 
 
 
-	/------- PLOTS ---------/
+	##/------- PLOTS ---------/##
 	p1 <- plotLowHigh(taskA, "mean", norm_error, "", 1, "noID task - Mean error", 0, 0.4)
 	p2 <- plotDifference(taskA, "mean", norm_error, "", "noID task - Difference mean error", 0, 0.4)
 	p3 <- plotLowHigh(taskB, "mean", norm_error, "", 7, "ID task - Mean error", 0, 0.4)
@@ -300,12 +300,12 @@ getUpperCI <- function(x, f) {
 	
 	
 	
-	/-------- WRITE PDFs --------/
-	pdf(file = "STAGGEREDANIMATION-xp1-norm-error.pdf", width=15, height=9)
+	##/-------- WRITE PDFs --------/##
+	##pdf(file = "STAGGEREDANIMATION-xp1-norm-error.pdf", width=15, height=9)
 	grid.arrange(p1,p2,p3,p4, ncol=2)
-	dev.off()	
+	##dev.off()	
 	
-	pdf(file = "STAGGEREDANIMATION-xp1-accuracy.pdf", width=15, height=15)
+	##pdf(file = "STAGGEREDANIMATION-xp1-accuracy.pdf", width=15, height=15)
 	grid.arrange(p11,p12,p15,p16,p13,p14, ncol=2)
-	dev.off()
+	##dev.off()
 	
