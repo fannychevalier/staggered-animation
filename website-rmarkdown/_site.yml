@@ -1,0 +1,12 @@
+name: "not-so-staggering"
+navbar:
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Article"
+      href: http://www.cs.toronto.edu/~fchevali/fannydotnet//resources_pub/pdf/notsostaggering-infovis14.pdf
+    - text: "Experiment 1"
+      href: experiment1.html
+    - text: "Experiment 2"
+      href: experiment2.html
+

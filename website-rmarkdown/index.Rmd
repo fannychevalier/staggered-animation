@@ -1,0 +1,42 @@
+---
+title: "The Not-So-Staggering Effect of <br /> Staggered Animation"
+author: Fanny Chevalier, Pierre Dragicevic and Steve Franconeri
+output: html_document
+---
+
+<style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+ 
+</style>
+
+
+&nbsp;
+
+
+We empirically evaluated the effect of two staggering techniques on tracking tasks, focusing on cases that should most favour staggering. We found that introducing staggering has a negligible, or even negative, impact on multiple object tracking performance. The potential benefits of staggering may be outweighed by strong costs: a loss of common-motion grouping information about which objects travel in similar paths, and less predictability about when any specific object would begin to move. Staggering may be beneficial in some conditions, but they have yet to be demonstrated. 
+
+This website contains all experimental instructions and program for you to try the two experiments described in our paper. If you have any question, please contact us.
+
+&nbsp;
+
+
+<div class="col2">
+<iframe width="300" height="245" src="https://www.youtube.com/embed/qssyWNCZFyk" frameborder="0" allowfullscreen></iframe>
+No staggering
+
+<iframe width="300" height="245" src="https://www.youtube.com/embed/ijIEdRuijMA" frameborder="0" allowfullscreen></iframe>
+Staggering
+</div>
+
+&nbsp;
+
+&nbsp;
+
+## Reference
+Chevalier, F., Dragicevic, P. and Franconeri, S. <br />
+[The Not So Staggering Effect of Staggered Animations](http://www.cs.toronto.edu/~fchevali/fannydotnet//resources_pub/pdf/notsostaggering-infovis14.pdf) <br />
+In IEEE Transactions on Visualization and Computer Graphics (Proc. Infovis'14) 20(12):2241-2250.  
