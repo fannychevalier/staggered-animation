@@ -1,0 +1,10 @@
+name: "animations"
+navbar:
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Animation 25 Years Later"
+      href: http://animations.recherche.enac.fr/
+    - text: "Staggered Animation"
+      href: http://fannychevalier.net/animations/staggered-animations/index.html
+  
